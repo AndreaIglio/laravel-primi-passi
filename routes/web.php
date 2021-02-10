@@ -14,5 +14,29 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+});
+Route::get('about_us', function () {
+    $name = 'Andrea';
+    return view('about', compact('name'));
+});
+Route::get('story', function () {
+    $countries = [
+        [
+            "name" => 'Indonesia',
+        ],
+        [
+            "name" => 'Marocco',
+        ],
+        [
+            "name" => 'Australia',
+        ],
+        ];
+    return view('story', compact('countries'));
+});
+Route::get('contact_us', function () {
+    return view('contact');
+});
+Route::get('home', function () {
+    return view('home');
 });
